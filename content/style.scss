@@ -1,0 +1,225 @@
+/* SCSS objects */
+
+$standard-border-radius: 5px;
+$page-width: 70%;
+$max-picture-width: 300px;
+$min-article-width: $max-picture-width + 120px;
+$menu-min-width: 170px;
+$menu-margin: 10px;
+$min-page-width: 2 * $menu-min-width + 2 * $menu-margin + $min-article-width;
+$num-of-menu-items: 5;
+$menu-item-line-height: 20px;
+$menu-item-padding: 10px;
+$menu-item-border: 1px;
+$menu-item-margin: 4px;
+$menu-item-full-height: $menu-item-line-height +2*$menu-item-padding +2*$menu-item-border + $menu-item-margin;
+$menu-padding: 8px;
+$vertical-margin: 20px;
+
+@mixin border {
+  border: solid 1px;
+  border-radius: $standard-border-radius;
+}
+
+%box {
+  @include border;
+  background-color: blanchedalmond;
+  padding: $menu-padding;
+}
+
+%menu-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* HTML Tags */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, sans-serif;
+  line-height: 1.4;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+footer {
+  background-color: burlywood;
+}
+
+
+/* Classes */
+
+.banner-container {
+  @include border;
+  background-color: blanchedalmond;
+  display: flex;
+  margin: $vertical-margin auto;
+  min-width: $min-page-width;
+  width: $page-width;
+}
+
+.logo-container {
+  margin: auto;
+  width: 20%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.banner {
+  margin: $vertical-margin auto;
+  width: 70%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.nav-menu-container {
+  background-color: burlywood;
+  margin: auto;
+  width: 100%;
+}
+
+.nav-menu-list {
+  @extend %menu-list;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.nav-menu-list-item {
+  padding-left: 0.25rem;
+}
+
+.nav-menu-list-item, .left-menu-list-item {
+  a {
+    @include border;
+    background-color: burlywood;
+    color: black;
+    display: block;
+    font-size: 0.9rem;
+    padding: $menu-item-padding;
+    text-decoration: none;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: $vertical-margin auto;
+  min-width: $min-page-width;
+  width: $page-width;
+}
+
+.left-menu {
+  @extend %box;
+  margin-right: $menu-margin;
+  height: $num-of-menu-items*$menu-item-full-height+2*$menu-padding;
+  min-width: $menu-min-width;
+  width: 20%;
+}
+
+.right-menu {
+  @extend %box;
+  float: right;
+  min-width: $menu-min-width;
+  visibility: hidden;
+  width: 15%;
+}
+
+.left-menu-list {
+  @extend %menu-list;
+  flex-wrap: wrap;
+}
+
+.left-menu-list-item {
+  flex-basis: 100%;
+  margin-bottom: $menu-item-margin;
+}
+
+.article-box {
+  @extend %box;
+  min-width: $min-article-width;
+  padding: 1.25rem;
+  width: 60%;
+}
+
+.standard-article {
+  font-family: 'Times New Roman', Times, serif;
+
+  header {
+    padding-bottom: 0.1rem;
+
+    h1 {
+      margin: 0.5rem 0;
+    }
+
+    p {
+      font-size: 0.9rem;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.article-picture {
+  float: left;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: $max-picture-width;
+  }
+}
+
+.article-footer {
+  @include border;
+  padding: 0.8rem 1rem;
+
+  h4, p {
+    margin: 0 0 0.7rem;
+  }
+}
+
+
+/* Ids */
+
+#main-footer {
+  @include border;
+  margin: 0 auto;
+  min-width: $min-page-width;
+  width: $page-width;
+
+  h5 {
+    margin: 0.8rem 1rem;
+  }
+}
+
+#main-nav {
+  background-color: blanchedalmond;
+  border-radius: $standard-border-radius;
+  margin: auto;
+  min-width: $min-page-width;
+  width: $page-width;
+}
