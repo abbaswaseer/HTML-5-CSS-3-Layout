@@ -121,6 +121,12 @@ footer {
     font-size: 0.9rem;
     padding: $menu-item-padding;
     text-decoration: none;
+
+    &:hover {
+      background-color: chocolate;
+      border-color: black;
+      color: white;
+    }
   }
 }
 
