@@ -1,13 +1,16 @@
 /* SCSS objects */
 
-$standard-border-radius: 5px;
-$page-width: 85%;
 $max-picture-width: 300px;
-$min-width: 200px;
 $min-article-width: $max-picture-width + 120px;
 $menu-min-width: 170px;
 $menu-margin: 10px;
+
+$min-width: 200px;
 $min-page-width: 2 * $menu-min-width + 2 * $menu-margin + $min-article-width;
+$page-width: 85%;
+$vertical-margin: 20px;
+$standard-border-radius: 5px;
+
 $num-of-menu-items: 5;
 $menu-item-line-height: 20px;
 $menu-item-padding: 10px;
@@ -15,7 +18,6 @@ $menu-item-border: 1px;
 $menu-item-margin: 4px;
 $menu-item-full-height: 2*$menu-item-line-height +2*$menu-item-padding +2*$menu-item-border + $menu-item-margin;
 $menu-padding: 8px;
-$vertical-margin: 20px;
 
 @mixin border {
   border: solid 1px;
