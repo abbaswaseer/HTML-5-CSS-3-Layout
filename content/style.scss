@@ -3,6 +3,7 @@
 $standard-border-radius: 5px;
 $page-width: 70%;
 $max-picture-width: 300px;
+$min-width: 200px;
 $min-article-width: $max-picture-width + 120px;
 $menu-min-width: 170px;
 $menu-margin: 10px;
@@ -49,7 +50,7 @@ body {
 article,
 aside,
 details,
-figcaption,
+figcaption, 
 figure,
 footer,
 header,
@@ -228,4 +229,82 @@ footer {
   margin: auto;
   min-width: $min-page-width;
   width: $page-width;
+}
+
+@media screen and (max-width: 840px) {
+  /* Classes */
+
+  .banner-container {
+    min-width: $min-width;
+  }
+
+  .logo-container {
+    margin: 0;
+    width: 0;
+
+    img {
+      width: 0;
+    }
+  }
+
+  .banner {
+    width: 90%;
+  }
+
+  .nav-menu-list {
+    margin: 0 10px;
+    flex-wrap: wrap;
+  }
+
+  .container {
+    min-width: $min-width;
+  }
+
+  .left-menu, .right-menu {
+    border: 0;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+    visibility: hidden;
+    width: 0;
+  }
+
+  .article-box {
+    min-width: $min-width;
+    width: 100%;
+  }
+
+  /* IDs */
+
+  #main-footer {
+    min-width: $min-width;
+  }
+
+  #main-nav {
+    min-width: $min-width;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  /* Classes */
+
+  .banner-container {
+    margin: $vertical-margin/2 auto;
+  }
+
+  .banner {
+    margin: $vertical-margin/2 auto;
+  }
+
+  .container {
+    margin: $vertical-margin/2 auto;
+  }
+
+  .article-picture {
+    float: none;
+
+    img {
+      width: 100%;
+    }
+  }
 }
