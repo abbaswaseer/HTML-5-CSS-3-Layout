@@ -50,7 +50,7 @@ body {
 article,
 aside,
 details,
-figcaption, 
+figcaption,
 figure,
 footer,
 header,
@@ -192,6 +192,7 @@ footer {
 
 .article-picture {
   float: left;
+  text-align: center;
 
   img {
     display: block;
